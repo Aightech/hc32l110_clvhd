@@ -103,7 +103,7 @@ en_result_t I2C_SetFunc(en_i2c_func_t enFunc)
         case I2cStop_En:
             M0P_I2C->CR_f.STO = 1;
             break;
-        case I2cAck_En:
+        case I2cAck_En:// Enable Acknowledge: 
             M0P_I2C->CR_f.AA = 1;
             break;
         case I2cHlm_En:

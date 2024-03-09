@@ -2,6 +2,9 @@
 
 A build template for projects using HC32L110 series MCU and GNU Arm Embedded Toolchain.
 
+## Usage
+connect daplink SWD SCK GND 3.3V to HC32L110, make, make install
+
 # File Structure
 
 ```

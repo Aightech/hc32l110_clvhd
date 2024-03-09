@@ -1,0 +1,11 @@
+{
+  "additionalFiles": "../..",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "",
+  "fqbn": "teensy:avr:teensy40:usb=serial,speed=600,opt=o2std,keys=en-us",
+  "hardwareFolders": "/home/aightech/.arduino15/packages",
+  "otherLibrariesFolders": "/home/aightech/Arduino/libraries",
+  "runtime.ide.version": "10607",
+  "sketchLocation": "/home/aightech/dev/prj/clvhd/hc32l110-clvhd/arduino/SPI_I2c"
+}

@@ -38,9 +38,11 @@ ARCH_FLAGS	:= -mthumb -mcpu=cortex-m0plus -fno-common
 DEBUG_FLAGS ?= -gdwarf-3
 
 # c flags
-OPT			?= -Os
+OPT			?= -O0
 CSTD		?= -std=c99
 TGT_CFLAGS 	+= $(ARCH_FLAGS) $(DEBUG_FLAGS) $(OPT) $(CSTD) $(addprefix -D, $(LIB_FLAGS)) -Wall -ffunction-sections -fdata-sections
+# produce debugging information in DWARF format version 2
+TGT_CFLAGS  += -g -gdwarf-2
 
 # asm flags
 TGT_ASFLAGS += $(ARCH_FLAGS) $(DEBUG_FLAGS) $(OPT) -Wa,--warn

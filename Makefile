@@ -15,8 +15,8 @@ FLASH_PROGRM	?= pyocd
 # path to gcc arm
 #ARM_TOOCHAIN 	?= /opt/gcc-arm/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin
 #ARM_TOOCHAIN 	?= /opt/gcc-arm/arm-gnu-toolchain-11.3.rel1-x86_64-arm-none-eabi/bin
-ARM_TOOCHAIN 	?= /opt/gcc-arm/arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi/bin
-
+#ARM_TOOCHAIN 	?= /opt/gcc-arm/arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi/bin
+ARM_TOOCHAIN   ?= /opt/gcc-arm/arm-gnu-toolchain-12.3.rel1-x86_64-arm-none-eabi/bin
 
 # path to JLinkExe
 JLINKEXE		?= /opt/SEGGER/JLink/JLinkExe
@@ -38,8 +38,8 @@ LIB_FLAGS       =
 # C source folders
 CDIRS	:= User \
 		Libraries/CMSIS/HC32L110/source \
-		Libraries/HC32L110_Driver/src \
-		Libraries/Debug
+		Libraries/HC32L110_Driver/src #\
+		#Libraries/Debug
 # C source files (if there are any single ones)
 CFILES := 
 

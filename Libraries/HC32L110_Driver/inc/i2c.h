@@ -77,12 +77,12 @@
  *****************************************************************************/
 typedef enum en_i2c_func
 {
-    I2cMode_En  = 0, ///<I2C模块使能
-    I2cStart_En = 1, ///<开始信号
-    I2cStop_En  = 2, ///<结束信号
-    I2cAck_En   = 3, ///<应答信号
-    I2cHlm_En   = 4, ///<高速使能
-    I2cBaud_En  = 5, ///<波特率使能
+    I2cMode_En  = 0, ///<I2C模块使能: (eng: I2C module enable)
+    I2cStart_En = 1, ///<开始信号 (eng: start signal)
+    I2cStop_En  = 2, ///<结束信号 (eng: stop signal)
+    I2cAck_En   = 3, ///<应答信号 (eng: acknowledge signal)
+    I2cHlm_En   = 4, ///<高速使能 (eng: high speed enable)
+    I2cBaud_En  = 5, ///<波特率使能 (eng: baud rate enable)
 }en_i2c_func_t; 
 /**
  ******************************************************************************
@@ -102,9 +102,9 @@ typedef struct stc_i2c_config
 {
     en_i2c_func_t   enFunc;      ///<功能使能
     uint8_t         u8Tm;        ///<波特率计数器配置
-    stc_i2c_addr_t  stcSlaveAddr;///<从机地址
-    func_ptr_t      pfnI2cCb;    ///<中断服务函数指针
-    boolean_t       bTouchNvic;  ///<是否使能NVIC
+    stc_i2c_addr_t  stcSlaveAddr;///<从机地址: (eng: slave address)
+    func_ptr_t      pfnI2cCb;    ///<中断服务函数指针 (eng: interrupt service function pointer)
+    boolean_t       bTouchNvic;  ///<是否使能NVIC (eng: enable NVIC: Nested Vectored Interrupt Controller)
 }stc_i2c_config_t;
 
 /******************************************************************************
@@ -124,11 +124,11 @@ typedef struct stc_i2c_config
  en_result_t I2C_SetFunc(en_i2c_func_t enFunc);
   //I2C功能清除函数
  en_result_t I2C_ClearFunc(en_i2c_func_t enFunc);
- //获取中断标记SI
+ //获取中断标记SI (eng: get interrupt flag SI: Start Condition Interrupt)
  boolean_t I2C_GetIrq(void);
   //清除中断标记SI
  en_result_t I2C_ClearIrq(void);
- //获取状态
+ //获取状态 (eng: get status)
  uint8_t I2C_GetState(void);
  //写从机地址函数
  en_result_t I2C_WriteSlaveAddr(stc_i2c_addr_t *pstcSlaveAddr);
