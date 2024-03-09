@@ -1,0 +1,41 @@
+[
+ {
+  "directory": "/home/aightech/dev/prj/clvhd/hc32l110-clvhd",
+  "arguments": [
+   "/home/aightech/.arduino15/packages/teensy/tools/teensy-compile/11.3.1/arm/bin/arm-none-eabi-g++",
+   "-c",
+   "-O2",
+   "-g",
+   "-Wall",
+   "-ffunction-sections",
+   "-fdata-sections",
+   "-nostdlib",
+   "-MMD",
+   "-std=gnu++14",
+   "-fno-exceptions",
+   "-fpermissive",
+   "-fno-rtti",
+   "-fno-threadsafe-statics",
+   "-felide-constructors",
+   "-Wno-error=narrowing",
+   "-mthumb",
+   "-mcpu=cortex-m7",
+   "-mfloat-abi=hard",
+   "-mfpu=fpv5-d16",
+   "-D__IMXRT1062__",
+   "-DTEENSYDUINO=158",
+   "-DARDUINO=10607",
+   "-DARDUINO_TEENSY40",
+   "-DF_CPU=600000000",
+   "-DUSB_SERIAL",
+   "-DLAYOUT_US_ENGLISH",
+   "-I/home/aightech/dev/prj/clvhd/hc32l110-clvhd/build/pch",
+   "-I/home/aightech/.arduino15/packages/teensy/hardware/avr/1.58.1/cores/teensy4",
+   "-I/home/aightech/.arduino15/packages/teensy/hardware/avr/1.58.1/libraries/SPI",
+   "/home/aightech/dev/prj/clvhd/hc32l110-clvhd/build/sketch/SPI_I2c.ino.cpp",
+   "-o",
+   "/home/aightech/dev/prj/clvhd/hc32l110-clvhd/build/sketch/SPI_I2c.ino.cpp.o"
+  ],
+  "file": "/home/aightech/dev/prj/clvhd/hc32l110-clvhd/build/sketch/SPI_I2c.ino.cpp"
+ }
+]

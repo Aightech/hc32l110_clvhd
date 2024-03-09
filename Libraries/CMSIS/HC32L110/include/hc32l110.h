@@ -1576,14 +1576,17 @@ typedef struct
 
 typedef struct
 {
-    __IO uint32_t H1M                       : 1;
-    uint32_t RESERVED1                      : 1;
-    __IO uint32_t AA                        : 1;
-    __IO uint32_t SI                        : 1;
+    __IO uint32_t H1M                       : 1; 
+    uint32_t RESERVED1                      : 1; 
+    __IO uint32_t AA                        : 1; 
+    __IO uint32_t SI                        : 1; 
     __IO uint32_t STO                       : 1;
-    __IO uint32_t STA                       : 1;
-    __IO uint32_t ENS                       : 1;
+    __IO uint32_t STA                       : 1; 
+    __IO uint32_t ENS                       : 1; 
 } stc_i2c_cr_field_t;
+
+//to configure i2c clock strecth use the following field: 
+//I2C_CR->H1M = 0; //standard mode
 
 typedef struct
 {
@@ -2712,165 +2715,205 @@ typedef struct
     };
 }M0P_FLASH_TypeDef;
 
+
+//NOTE: P0IN is offset 0x104
 typedef struct
 {
+    //offset 0x00
     uint8_t RESERVED0[4];
+    //offset 0x04
     union
     {
         __IO uint32_t P01_SEL;
         stc_gpio_p01_sel_field_t P01_SEL_f;
     };
+    //offset 0x08
     union
     {
         __IO uint32_t P02_SEL;
         stc_gpio_p02_sel_field_t P02_SEL_f;
     };
+    //offset 0x0C
     union
     {
         __IO uint32_t P03_SEL;
         stc_gpio_p03_sel_field_t P03_SEL_f;
     };
+    //offset 0x10
     uint8_t RESERVED3[64];
+    //offset 0x50
     union
     {
         __IO uint32_t P14_SEL;
         stc_gpio_p14_sel_field_t P14_SEL_f;
     };
+    //offset 0x54
     union
     {
         __IO uint32_t P15_SEL;
         stc_gpio_p15_sel_field_t P15_SEL_f;
     };
+    //offset 0x58
     uint8_t RESERVED5[52];
+    //offset 0x8C
     union
     {
         __IO uint32_t P23_SEL;
         stc_gpio_p23_sel_field_t P23_SEL_f;
     };
+    //offset 0x90
     union
     {
         __IO uint32_t P24_SEL;
         stc_gpio_p24_sel_field_t P24_SEL_f;
     };
+    //offset 0x94
     union
     {
         __IO uint32_t P25_SEL;
         stc_gpio_p25_sel_field_t P25_SEL_f;
     };
+    //offset 0x98
     union
     {
         __IO uint32_t P26_SEL;
         stc_gpio_p26_sel_field_t P26_SEL_f;
     };
+    //offset 0x9C
     union
     {
         __IO uint32_t P27_SEL;
         stc_gpio_p27_sel_field_t P27_SEL_f;
     };
+    //offset 0xA0
     uint8_t RESERVED10[36];
+    //offset 0xC4
     union
     {
         __IO uint32_t P31_SEL;
         stc_gpio_p31_sel_field_t P31_SEL_f;
     };
+    //offset 0xC8
     union
     {
         __IO uint32_t P32_SEL;
         stc_gpio_p32_sel_field_t P32_SEL_f;
     };
+    //offset 0xCC
     union
     {
         __IO uint32_t P33_SEL;
         stc_gpio_p33_sel_field_t P33_SEL_f;
     };
+    //offset 0xD0
     union
     {
         __IO uint32_t P34_SEL;
         stc_gpio_p34_sel_field_t P34_SEL_f;
     };
+    //offset 0xD4
     union
     {
         __IO uint32_t P35_SEL;
         stc_gpio_p35_sel_field_t P35_SEL_f;
     };
+    //offset 0xD8
     union
     {
         __IO uint32_t P36_SEL;
         stc_gpio_p36_sel_field_t P36_SEL_f;
     };
+    //offset 0xDC
     uint8_t RESERVED16[36];
+    //offset 0x100
     union
     {
         __IO uint32_t P0DIR;
         stc_gpio_p0dir_field_t P0DIR_f;
     };
+    //offset 0x104
     union
     {
         __IO uint32_t P0IN;
         stc_gpio_p0in_field_t P0IN_f;
     };
+    //offset 0x108
     union
     {
         __IO uint32_t P0OUT;
         stc_gpio_p0out_field_t P0OUT_f;
     };
+    //offset 0x10C
     union
     {
         __IO uint32_t P0ADS;
         stc_gpio_p0ads_field_t P0ADS_f;
     };
+    //offset 0x110
     uint8_t RESERVED20[12];
+    //offset 0x11C
     union
     {
         __IO uint32_t P0DR;
         stc_gpio_p0dr_field_t P0DR_f;
     };
+    //offset 0x120
     union
     {
         __IO uint32_t P0PU;
         stc_gpio_p0pu_field_t P0PU_f;
     };
+    //offset 0x124
     union
     {
         __IO uint32_t P0PD;
         stc_gpio_p0pd_field_t P0PD_f;
     };
+    //offset 0x128
     uint8_t RESERVED23[4];
+    //offset 0x12C
     union
     {
         __IO uint32_t P0OD;
         stc_gpio_p0od_field_t P0OD_f;
     };
+    //offset 0x130
     union
     {
         __IO uint32_t P0HIE;
         stc_gpio_p0hie_field_t P0HIE_f;
     };
+    //offset 0x134
     union
     {
         __IO uint32_t P0LIE;
         stc_gpio_p0lie_field_t P0LIE_f;
     };
+    //offset 0x138
     union
     {
         __IO uint32_t P0RIE;
         stc_gpio_p0rie_field_t P0RIE_f;
     };
+    //offset 0x13C
     union
     {
         __IO uint32_t P0FIE;
         stc_gpio_p0fie_field_t P0FIE_f;
     };
+    //offset 0x140
     union
     {
         __IO uint32_t P1DIR;
         stc_gpio_p1dir_field_t P1DIR_f;
     };
+    //offset 0x144
     union
     {
         __IO uint32_t P1IN;
         stc_gpio_p1in_field_t P1IN_f;
     };
+    //offset 0x148
     union
     {
         __IO uint32_t P1OUT;
@@ -2923,6 +2966,7 @@ typedef struct
         __IO uint32_t P1FIE;
         stc_gpio_p1fie_field_t P1FIE_f;
     };
+    //offset 0x180
     union
     {
         __IO uint32_t P2DIR;
@@ -2933,6 +2977,7 @@ typedef struct
         __IO uint32_t P2IN;
         stc_gpio_p2in_field_t P2IN_f;
     };
+    //offset 0x188
     union
     {
         __IO uint32_t P2OUT;
@@ -2990,6 +3035,7 @@ typedef struct
         __IO uint32_t P3DIR;
         stc_gpio_p3dir_field_t P3DIR_f;
     };
+    //offset 0x1C4
     union
     {
         __IO uint32_t P3IN;

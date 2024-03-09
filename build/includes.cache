@@ -1,0 +1,22 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/home/aightech/.arduino15/packages/teensy/hardware/avr/1.58.1/cores/teensy4"
+  },
+  {
+    "Sourcefile": "/home/aightech/dev/prj/clvhd/hc32l110-clvhd/build/sketch/SPI_I2c.ino.cpp",
+    "Include": "SPI.h",
+    "Includepath": "/home/aightech/.arduino15/packages/teensy/hardware/avr/1.58.1/libraries/SPI"
+  },
+  {
+    "Sourcefile": "/home/aightech/dev/prj/clvhd/hc32l110-clvhd/build/sketch/SPI_I2c.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/home/aightech/.arduino15/packages/teensy/hardware/avr/1.58.1/libraries/SPI/SPI.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

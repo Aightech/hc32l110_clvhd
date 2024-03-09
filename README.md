@@ -2,7 +2,10 @@
 
 This repository contains the firmware for the CleverHand project. The firmware is based on the HC32L110 microcontroller from HDSC.
 
-# Firmware Structure
+## Usage
+connect daplink SWD SCK GND 3.3V to HC32L110, make, make install
+
+# File Structure
 
 Here a brief overview of the firmware behavior:
 
