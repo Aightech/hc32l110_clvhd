@@ -57,6 +57,7 @@ void set_address(uint8_t address)
     Gpio_SetIO(CLVHD_ADD2_PORT, CLVHD_ADD2_PIN, (address >> 2) & 0x01);
     Gpio_SetIO(CLVHD_ADD3_PORT, CLVHD_ADD3_PIN, (address >> 3) & 0x01);
     Gpio_SetIO(CLVHD_ADD4_PORT, CLVHD_ADD4_PIN, (address >> 4) & 0x01);
+    module_address = address;
 }
 
 void CLVHD_ConfigPin(void)
@@ -80,12 +81,14 @@ void CLVHD_ConfigPin(void)
     Gpio_SetFunc_I2C_DAT_P35();
     Gpio_SetFunc_I2C_CLK_P36();
 
-    // Clock and Data
-    Gpio_InitIOExt(CLVHD_CLK_PORT, CLVHD_CLK_PIN, GpioDirIn, TRUE, FALSE, FALSE, 0);
-    Gpio_ClearIrq(CLVHD_CLK_PORT, CLVHD_CLK_PIN);
-    Gpio_EnableIrq(CLVHD_CLK_PORT, CLVHD_CLK_PIN, GpioIrqLow);
-    EnableNvic(PORT3_IRQn, DDL_IRQ_LEVEL_DEFAULT, TRUE);
-    Gpio_InitIOExt(CLVHD_DATA_PORT, CLVHD_DATA_PIN, GpioDirOut, FALSE, FALSE, FALSE, FALSE);
+    set_address(0x00);
+
+    // // Clock and Data
+    // Gpio_InitIOExt(CLVHD_CLK_PORT, CLVHD_CLK_PIN, GpioDirIn, TRUE, FALSE, FALSE, 0);
+    // Gpio_ClearIrq(CLVHD_CLK_PORT, CLVHD_CLK_PIN);
+    // Gpio_EnableIrq(CLVHD_CLK_PORT, CLVHD_CLK_PIN, GpioIrqLow);
+    // EnableNvic(PORT3_IRQn, DDL_IRQ_LEVEL_DEFAULT, TRUE);
+    // Gpio_InitIOExt(CLVHD_DATA_PORT, CLVHD_DATA_PIN, GpioDirOut, FALSE, FALSE, FALSE, FALSE);
 
     // Chained INPUT
     Gpio_InitIOExt(CLVHD_DIN_PORT, CLVHD_DIN_PIN, GpioDirIn, TRUE, FALSE, FALSE, FALSE);
