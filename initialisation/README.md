@@ -193,15 +193,19 @@ int main(void)
 
 ## Figures 
 ![alt text](MOD1.png)
+
 Fig.1 Timing diagram for module with internal address 1. Ch.1 represents the CLK signal (I2C_SCL), Ch.2 represents StopState from the Teensy (IO1_out) and Ch.3 represents StopState from module 1 to module 2 (IO1_in)
 
 ![alt text](MOD2.JPG)
+
 Fig.2 Ch.1 represents the CLK signal. Ch.2 represents comparator output (CSB), which is pulled LOW when the module is selected (i.e. internal address matches the 5-bit address, which is 00010 in this case).
 
 ![alt text](MOD3.JPG)
+
 Fig.3 Ch.1 represents the CLK signal. Ch.2 represents comparator output (CSB), which is pulled LOW when the module is selected (i.e. internal address matches the 5-bit address, which is 00011 in this case).
 
 ![alt text](MOD4.JPG)
+
 Fig.4 Ch.1 represents the CLK signal. Ch.2 represents comparator output (CSB), which is pulled LOW when the module is selected (i.e. internal address matches the 5-bit address, which is 00100 in this case).
 
 ## Next Step
