@@ -5,9 +5,6 @@ In essence, this method works on counting the number of rising edges in a common
 
 The internal address of the modules in the chain should increase in increments of +1 for each subsequent module. The pinout for testing and the timing diagram are shown below in Figure 2 and 3.
 
-![alt text](timing_diagram.png)
-Fig.1 Timing diagram 
-
 ### Schematic and Timing Diagram
 In essence, this method works on counting the number of rising edges in a common CLOCK (CLK) signal before the communication module is "told" to stop counting. The total number of counts is then used to set the internal address of the communication module.
 
