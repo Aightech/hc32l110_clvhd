@@ -5,7 +5,7 @@ In essence, this method works on counting the number of rising edges in a common
 
 The internal address of the modules in the chain should increase in increments of +1 for each subsequent module. The pinout for testing and the timing diagram are shown below in Figure 2 and 3.
 
-![alt text](timing_diagram.PNG)
+![alt text](timing_diagram.png)
 Fig.1 Timing diagram 
 
 ### Schematic and Timing Diagram
@@ -17,11 +17,11 @@ In essence, this method works on counting the number of rising edges in a common
 
 The internal address of the modules in the chain should increase in increments of +1 for each subsequent module. The pinout for testing and the timing diagram are shown below in Figure 2 and 3.
 
-![alt text](pinout.PNG)
-Fig.2 Pinout for testing
+![alt text](pinout.png)
+Fig.1 Pinout for testing
 
-![alt text](timing_diagram.PNG)
-Fig.3 Timing diagram
+![alt text](timing_diagram.png)
+Fig.2 Timing diagram
 
 ### Code
 For Teensy:
@@ -253,10 +253,12 @@ Testing was done using 3 modules for simplicity. Internal addresses were tested 
 
 ### Oscilloscope Screenshots
 ![alt text](F0000TEK.JPG)
-Fig.4 The yellow trace corresponds to the pin SCLK_ARM for module 2 and the blue trace represents the CLK signal. This screenshot was taking for module 2. It should count two rising edges based on this screenshot, which was proven correct using an oscilloscope and a test probe.
+
+Fig.3 The yellow trace corresponds to the pin SCLK_ARM for module 2 and the blue trace represents the CLK signal. This screenshot was taking for module 2. It should count two rising edges based on this screenshot, which was proven correct using an oscilloscope and a test probe.
 
 ![alt text](F0001TEK.JPG)
-Fig.5 The yellow trace corresponds to the pin SCLK_ARM for module 1 and the blue trace represents the CLK signal. This screenshot was taking for module 1. It should count one rising edge based on this screenshot, which was proven correct using an oscilloscope and a test probe.
+
+Fig.4 The yellow trace corresponds to the pin SCLK_ARM for module 1 and the blue trace represents the CLK signal. This screenshot was taking for module 1. It should count one rising edge based on this screenshot, which was proven correct using an oscilloscope and a test probe.
 
 ## Future Work
 ### Optimisation
