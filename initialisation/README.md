@@ -14,7 +14,7 @@ The colour of the LED indicates the internal address:
 
 In terms of wiring and pin selection, only the FPC cable (communication bus) was used. No extra wires are added to the PCBs.
 
-![alt text](pinout2.PNG)
+![alt text](pinout2.png)
 ## Code 
 ```c++
 #include "gpio.h"
@@ -192,7 +192,7 @@ int main(void)
 * Interrupt request (IRQ) is enabled. Each rising edge read by the pin sends a signal to the controller and the interrupt routine is carried out
 
 ## Figures 
-![alt text](MOD1.PNG)
+![alt text](MOD1.png)
 Fig.1 Timing diagram for module with internal address 1. Ch.1 represents the CLK signal (I2C_SCL), Ch.2 represents StopState from the Teensy (IO1_out) and Ch.3 represents StopState from module 1 to module 2 (IO1_in)
 
 ![alt text](MOD2.JPG)
