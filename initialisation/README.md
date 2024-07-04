@@ -1,4 +1,34 @@
 # Initialisation Protocol (V2)
+## Description
+Each module is connected to a clock signal from the controller. Also each module as an stop signal input connected to the previous module stop signal output. 
+![alt text](pinout2.png)
+Each module in the chain counts the rising edges of the clock signal until it reads a "stop signal" (LOW) from the previous module. When a stop signal has been received the module stop counting and assigns itself an internal address based on the number of clock edges counted. It then sets its stop signal output to LOW for the next clock cycle, this allow the next module to set its internal address with address 1 higher than the previous module. This process continues until all modules have assigned themselves unique addresses. The diagram shows the states of the clock, the output signals of the controller and each module, and the internal addresses of the modules at each step.
+
+<img src="https://svg.wavedrom.com/{signal:[{name:'Clock',wave:'0P..|',color:'blue'},{name:'Controller Out',wave:'10...|',node:'.A........',color:'red'},{name:'Module 1',wave:'==...|',data:['Address 0','Address 1'],node:'..B.......',color:'green'},{name:'M1 Out',wave:'1.0..|',node:'..C......',color:'red'},{name:'Module 2',wave:'===..|',data:['Address 0','Address 1','Address 2'],node:'...D.......',color:'green'},{name:'M2 Out',wave:'1..0.|',node:'...E.......',color:'red'},{name:'Module 3',wave:'====.|',data:['Address 0','Address 1','Address 2','Address 3'],node:'....F......',color:'green'},{name:'M3 Out',wave:'1...0|',node:'....G...',color:'red'}],edge:['A~>B','B~>C','C~>D','D~>E','E~>F','F~>G'],config:{hscale:2,y0:-20},head:{text:'Address Assignment Sequence',tick:0,tickWidth:1,tickLabel:0}}"/>
+
+```wavedrom
+{
+  "signal": [
+    {"name": "Clock", "wave": "0P..|", "color": "blue"},
+    {"name": "Controller Out", "wave": "10...|", node: '.A........', "color": "red"},
+    {"name": "Module 1", "wave": "==...|", "data": ["Address 0", "Address 1"], node: '..B.......',"color": "green"},
+    {"name": "M1 Out", "wave": "1.0..|", node: '..C......',"color": "red",},
+    {"name": "Module 2", "wave": "===..|", "data": ["Address 0", "Address 1", "Address 2"],node: '...D.......', "color": "green"},
+    {"name": "M2 Out", "wave": "1..0.|",node: '...E.......', "color": "red"},
+    {"name": "Module 3", "wave": "====.|", "data": ["Address 0", "Address 1", "Address 2", "Address 3"],node: '....F......', "color": "green"},
+    {"name": "M3 Out", "wave": "1...0|", node: '....G...',"color": "red"},
+   
+  ],
+  "edge": ['A~>B','B~>C','C~>D','D~>E','E~>F','F~>G'],
+  "config": { "hscale": 2, "y0": -20 },
+  "head": {
+    "text": "Address Assignment Sequence",
+    "tick": 0,
+    "tickWidth": 1,
+    "tickLabel": 0
+  }
+}
+```
 ## Changes from V1
 4 modules were used for testing. Within each module, instead of tracking every value that the pin reads, the function PORT3_IRQHandler() only runs when an IRQ is triggered. Also, unlike the previous version, where the stopState is sent after a delay of 1000ms, the stopState is sent when the pin receives the next rising edge after the module has stopped counting. In this case, the frequency of the CLK signal can be adjusted freely.
 
@@ -14,7 +44,6 @@ The colour of the LED indicates the internal address:
 
 In terms of wiring and pin selection, only the FPC cable (communication bus) was used. No extra wires are added to the PCBs.
 
-![alt text](pinout2.png)
 ## Code 
 ```c++
 #include "gpio.h"
