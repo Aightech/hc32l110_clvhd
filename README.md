@@ -1,5 +1,5 @@
 # HC32L110 firmware for CleverHand project
-
+(from https://github.com/IOsetting/hc32l110-template)
 This repository contains the firmware for the CleverHand project. The firmware is based on the HC32L110 microcontroller from HDSC.
 
 ## Usage
