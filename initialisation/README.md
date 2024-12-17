@@ -10,16 +10,15 @@ Each module in the chain counts the rising edges of the clock signal until it re
 {
   "signal": [
     {"name": "Clock", "wave": "0P..|", "color": "blue"},
-    {"name": "Controller Out", "wave": "10...|", node: '.A........', "color": "red"},
-    {"name": "Module 1", "wave": "==...|", "data": ["Address 0", "Address 1"], node: '..B.......',"color": "green"},
-    {"name": "M1 Out", "wave": "1.0..|", node: '..C......',"color": "red",},
-    {"name": "Module 2", "wave": "===..|", "data": ["Address 0", "Address 1", "Address 2"],node: '...D.......', "color": "green"},
-    {"name": "M2 Out", "wave": "1..0.|",node: '...E.......', "color": "red"},
-    {"name": "Module 3", "wave": "====.|", "data": ["Address 0", "Address 1", "Address 2", "Address 3"],node: '....F......', "color": "green"},
-    {"name": "M3 Out", "wave": "1...0|", node: '....G...',"color": "red"},
-   
+    {"name": "Controller Out", "wave": "10...|", "node": ".A........", "color": "red"},
+    {"name": "Module 1", "wave": "==...|", "data": ["Address 0", "Address 1"], "node": "..B.......","color": "green"},
+    {"name": "M1 Out", "wave": "1.0..|", "node": "..C......","color": "red"},
+    {"name": "Module 2", "wave": "===..|", "data": ["Address 0", "Address 1", "Address 2"],"node": "...D.......", "color": "green"},
+    {"name": "M2 Out", "wave": "1..0.|","node": "...E.......", "color": "red"},
+    {"name": "Module 3", "wave": "====.|", "data": ["Address 0", "Address 1", "Address 2", "Address 3"],"node": "....F......", "color": "green"},
+    {"name": "M3 Out", "wave": "1...0|", "node": "....G...","color": "red"}
   ],
-  "edge": ['A~>B','B~>C','C~>D','D~>E','E~>F','F~>G'],
+  "edge": ["A~>B","B~>C","C~>D","D~>E","E~>F","F~>G"],
   "config": { "hscale": 2, "y0": -20 },
   "head": {
     "text": "Address Assignment Sequence",
