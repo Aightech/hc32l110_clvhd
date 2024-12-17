@@ -77,9 +77,13 @@ void RGB_WriteByte(uint8_t byte)
  */
 void RGB_SetColor(uint8_t r, uint8_t g, uint8_t b)
 {
+    //prevent interupt
+    __disable_irq();
     RGB_WriteByte(g);
     RGB_WriteByte(r);
     RGB_WriteByte(b);
+    //enable interupt
+    __enable_irq();
 }
 
 /**

@@ -82,7 +82,7 @@ static func_ptr_t pfnI2ctCallback = NULL;
  }
  /**
  ******************************************************************************
- ** \brief  I2C功能设置相关函数
+ ** \brief  I2C功能设置相关函数 : (eng: I2C function set related functions)
  **
  ** \param [in] enFunc功能参数
  **
@@ -95,10 +95,10 @@ en_result_t I2C_SetFunc(en_i2c_func_t enFunc)
     switch(enFunc)
     {
         case I2cMode_En:
-            M0P_I2C->CR_f.ENS = 1;
+            M0P_I2C->CR_f.ENS = 1; // Enable I2C:
             break;
         case I2cStart_En:
-            M0P_I2C->CR_f.STA = 1;
+            M0P_I2C->CR_f.STA = 1; // Enable Start:
             break;
         case I2cStop_En:
             M0P_I2C->CR_f.STO = 1;
@@ -120,7 +120,7 @@ en_result_t I2C_SetFunc(en_i2c_func_t enFunc)
 }
  /**
  ******************************************************************************
- ** \brief  I2C功能清除相关函数
+ ** \brief  I2C功能清除相关函数 : (eng: I2C function clear related function)
  **
  ** \param [in] enFunc功能参数
  **
@@ -158,14 +158,14 @@ en_result_t I2C_SetFunc(en_i2c_func_t enFunc)
  }
  /**
  ******************************************************************************
- ** \brief  I2C获取中断标记函数
+ ** \brief  I2C获取中断标记函数 : (eng: I2C get interrupt flag function, return TRUE if interrupt flag is set)
  **
  ** \param 无
  **
  ** \retval bIrq中断标记
  **
  ******************************************************************************/
-boolean_t I2C_GetIrq(void)
+boolean_t I2C_GetIrq(void) 
 {
     boolean_t bIrq = FALSE;
     bIrq = M0P_I2C->CR_f.SI;
@@ -173,7 +173,7 @@ boolean_t I2C_GetIrq(void)
 }
 /**
  ******************************************************************************
- ** \brief  I2C清除中断标记函数
+ ** \brief  I2C清除中断标记函数 : (eng: I2C clear interrupt flag function)
  **
  ** \param 无
  **
@@ -189,7 +189,7 @@ en_result_t I2C_ClearIrq(void)
 }
  /**
  ******************************************************************************
- ** \brief  I2C获取相关状态
+ ** \brief  I2C获取相关状态 : (eng: I2C get related status (eg. start, stop, ack, etc.))
  **
  ** \param 无
  **
@@ -204,18 +204,18 @@ uint8_t I2C_GetState(void)
 }
 /**
  ******************************************************************************
- ** \brief  I2C写从机地址函数
+ ** \brief  I2C写从机地址函数 : (eng: I2C write slave address function)
  **
  ** \param u8SlaveAddr从机地址
  **
- ** \retval I2C写成功与否状态
+ ** \retval I2C写成功与否状态 : (eng: I2C write success or failure status)
  **
  ******************************************************************************/
  en_result_t I2C_WriteSlaveAddr(stc_i2c_addr_t *pstcSlaveAddr)
 {
     en_result_t enRet = Error;
-    M0P_I2C->ADDR_f.I2CADR = pstcSlaveAddr->Addr;
-    M0P_I2C->ADDR_f.GC = pstcSlaveAddr->Gc;
+    M0P_I2C->ADDR_f.I2CADR = pstcSlaveAddr->Addr;//
+    M0P_I2C->ADDR_f.GC = pstcSlaveAddr->Gc;//
     enRet = Ok;
     return enRet;     
 }

@@ -101,7 +101,7 @@ typedef struct stc_i2c_addr
 typedef struct stc_i2c_config
 {
     en_i2c_func_t   enFunc;      ///<功能使能
-    uint8_t         u8Tm;        ///<波特率计数器配置
+    uint8_t         u8Tm;        ///<波特率计数器配置: (eng: baud rate counter configuration)
     stc_i2c_addr_t  stcSlaveAddr;///<从机地址: (eng: slave address)
     func_ptr_t      pfnI2cCb;    ///<中断服务函数指针 (eng: interrupt service function pointer)
     boolean_t       bTouchNvic;  ///<是否使能NVIC (eng: enable NVIC: Nested Vectored Interrupt Controller)

@@ -1579,9 +1579,9 @@ typedef struct
     __IO uint32_t H1M                       : 1; 
     uint32_t RESERVED1                      : 1; 
     __IO uint32_t AA                        : 1; 
-    __IO uint32_t SI                        : 1; 
-    __IO uint32_t STO                       : 1;
-    __IO uint32_t STA                       : 1; 
+    __IO uint32_t SI                        : 1; //start condition
+    __IO uint32_t STO                       : 1; //stop condition
+    __IO uint32_t STA                       : 1; //repeated start condition
     __IO uint32_t ENS                       : 1; 
 } stc_i2c_cr_field_t;
 
@@ -3172,7 +3172,7 @@ typedef struct
 {
     union
     {
-        __IO uint32_t TMRUN;
+        __IO uint32_t TMRUN; // timer run register: used to start/stop the timer
         stc_i2c_tmrun_field_t TMRUN_f;
     };
     union
